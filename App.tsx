@@ -1,18 +1,20 @@
 import theme from '@theme/index';
-import {StatusBar, Text} from 'react-native';
+import {StatusBar, Text, View} from 'react-native';
 import {ThemeProvider} from 'styled-components/native';
 
 export default function App() {
   return (
     <>
       <StatusBar
-        barStyle="light-content"
+        barStyle="dark-content"
         backgroundColor="transparent"
         translucent
       />
 
       <ThemeProvider theme={theme}>
-        <Text>Home</Text>
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+          <Text style={{}}>Home</Text>
+        </View>
       </ThemeProvider>
     </>
   );
