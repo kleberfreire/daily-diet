@@ -1,4 +1,4 @@
-import {ButtonBack} from '@components/ButtonBack';
+import {HeaderWithButtonBack} from '@components/HeaderWithButtonBack';
 import {Highlight} from '@components/HighLight';
 import {useNavigation} from '@react-navigation/native';
 import {
@@ -21,7 +21,7 @@ export function PercentPage() {
 
   return (
     <Container>
-      <ButtonBack onPress={handleGoToHome} />
+      <HeaderWithButtonBack handleGoToHome={handleGoToHome} type="SUCCESS" />
       <Highlight title="90,86%" subtitle="das refeições dentro da dieta" />
       <Content>
         <TitleContent>Estatísticas gerais</TitleContent>

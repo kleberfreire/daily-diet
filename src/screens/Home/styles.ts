@@ -9,6 +9,6 @@ export const Title = styled.Text`
   margin-top: 40px;
   margin-bottom: 8px;
   color: ${({theme}) => theme.COLORS.GRAY_1};
-  font-size: ${({theme}) => theme.FONT_SIZE.MD};
+  font-size: ${({theme}) => theme.FONT_SIZE.MD}px;
   font-family: ${({theme}) => theme.FONT_FAMILY.REGULAR};
 `;

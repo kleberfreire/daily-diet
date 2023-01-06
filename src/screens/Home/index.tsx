@@ -12,12 +12,20 @@ export function Home() {
     navigation.navigate('percentPage');
   }
 
+  function handleRedirectCreateMeal() {
+    navigation.navigate('createMeal');
+  }
+
   return (
     <Container>
       <Header />
       <StatusPercent onPress={handleRedirectPercentPage} />
       <Title>Refeições</Title>
-      <ButtonIcon icon="add" title="Nova refeição" />
+      <ButtonIcon
+        icon="add"
+        title="Nova refeição"
+        onPress={handleRedirectCreateMeal}
+      />
       <FlatList
         keyExtractor={item => item}
         data={['12.02.22']}
