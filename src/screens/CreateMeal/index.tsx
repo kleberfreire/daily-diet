@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 import DatePicker from 'react-native-date-picker';
 import {HeaderWithButtonBack} from '@components/HeaderWithButtonBack';
 import {useNavigation} from '@react-navigation/native';
@@ -12,6 +12,7 @@ import {
   Label,
   Input,
 } from './styles';
+import {formatDatePT_BR, formatTimePT_BR_24hr} from '@utils/formatDateTime';
 
 export function CreateMeal() {
   const navigation = useNavigation();
@@ -47,18 +48,19 @@ export function CreateMeal() {
                 setOpenData(true);
               }}
               onChangeText={() => {}}
-              value={dateValue.toString()}
+              value={formatDatePT_BR(dateValue)}
             />
             <DatePicker
               modal
               mode="date"
               open={openData}
-              date={dateValue}
+              date={date}
               locale="pt-BR"
               onConfirm={d => {
                 console.log(d);
                 setOpenData(false);
                 setDateValue(d);
+                setDate(d);
               }}
               onCancel={() => {
                 setOpenData(false);
@@ -74,19 +76,19 @@ export function CreateMeal() {
                 setOpenTime(true);
               }}
               onChangeText={() => {}}
-              value={timeValue.toString()}
+              value={formatTimePT_BR_24hr(timeValue)}
             />
             <DatePicker
               modal
               mode="time"
               open={openTime}
-              date={timeValue}
+              date={time}
               locale="pt-BR"
               is24hourSource={'locale'}
-              onConfirm={d => {
-                console.log(d);
+              onConfirm={t => {
                 setOpenTime(false);
-                setTimeValue(d);
+                setTime(t);
+                setTimeValue(t);
               }}
               onCancel={() => {
                 setOpenTime(false);
